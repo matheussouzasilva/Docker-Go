@@ -1,30 +1,29 @@
 # Docker + Go 
 
-Esse repostório demonstra minha primeira interação real com docker e container rodando no win com wsl 
+ O objetivo é criar uma imagem que rode um executável que exiba a mensagem `Full Stack Rocks!!` desenvolvido em GoLang. A imagem deve ter no máximo 2Mb e deve estar disponível no dockerhub.
 
-Coisa simples, mas um bom inicio.
+## Usando o código-fonte
 
-## Como executar (Usando PowerShell conectado no WSL:Ubuntu)
+Após clonar o projeto, navegue pelo terminal até a pasta com os arquivos e faça o `build` da imagem
 
-1. Build da imagem:
-    
-   docker build -t go-imagem .
+```bash
+docker build -t go-imagem .
+```
 
-2. Subir(run) e Derrubar(rm) o container:
+Em seguida, rode o container com a imagem que acabou de criar
 
-   docker run --rm go-imagem
+```bash
+docker run --rm go-imagem
+```
 
-3. resultado esperado:
+Você deve receber a mensagem `Full Cycle Rocks!!` em seu terminal
 
-   Full Cycle Rocks
-   
-   ou
+## Usando a imagem no dockerhub
 
-   A imagem funcionou!
+Para usar a imagem hospedada no dockerhub, basta usar o seguinte comando:
 
-   ou
+```bash
+docker push matheus362579/go-imagem:latest
+```
 
-   O jogo da vida de Conway 
-   
-   (código disponibilizado pela https://go.dev/) 
-
+Você deve receber a mensagem `Full Cycle Rocks!!` em seu terminal
