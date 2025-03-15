@@ -16,8 +16,7 @@ RUN go mod download
 COPY . .
 
 # Construir o main.go
-RUN go build -o main .
-
+RUN GOOS=linux go build -o /app/main -ldflags='-s -w' .
 # Diminuir tamanho da imagem com Multi-stage
 
 #Usando scratch ao invés de alpine:latest 
