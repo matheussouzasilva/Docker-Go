@@ -1,5 +1,5 @@
 # Usar a imagem base do Go
-FROM golang:1.20
+FROM golang:1.20 AS builder
 
 # Definir o diretório de trabalho do container
 WORKDIR /app
@@ -18,4 +18,12 @@ COPY . .
 # Construir o main.go
 RUN go build -o main .
 
+# Diminuir tamanho da imagem com Multi-stage
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY --from=builder /app/main .
+
+# Executar o binário
 CMD ["./main"]

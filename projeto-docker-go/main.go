@@ -1,5 +1,4 @@
 
-// Código Full Cycle Rocks!!
 package main
 
 import "fmt"
