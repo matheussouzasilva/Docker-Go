@@ -19,9 +19,9 @@ COPY . .
 RUN go build -o main .
 
 # Diminuir tamanho da imagem com Multi-stage
-FROM alpine:latest
 
-WORKDIR /app
+#Usando scratch ao invés de alpine:latest 
+FROM scratch 
 
 COPY --from=builder /app/main .
 
