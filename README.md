@@ -20,10 +20,12 @@ Você deve receber a mensagem `Full Cycle Rocks!!` em seu terminal
 
 ## Usando a imagem no dockerhub
 
-Para usar a imagem hospedada no dockerhub, basta usar o seguinte comando:
+Para usar a imagem hospedada no dockerhub, basta usar o seguinte comando ou acesse o Dockerhub pelo link
 
 ```bash
-docker push matheus362579/go-imagem:latest
+docker pull matheus362579/go-imagem
+
+https://hub.docker.com/r/matheus362579/go-imagem
 ```
 
 Você deve receber a mensagem `Full Cycle Rocks!!` em seu terminal
